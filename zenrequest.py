@@ -1,10 +1,9 @@
 from sys import argv
+from ticket_util import *
 import requests as http
 import json
 import time as t
 from math import floor
-
-from ticket_util import *
 
 def __main(email, subdomain, token):
     #Format email and token for BasicAuthentication
@@ -59,13 +58,6 @@ if __name__ == '__main__':
     START_TIME = 1576411200
     END_TIME = 1578657600
     REQUEST = 'https://{sub_domain}.zendesk.com/api/v2/incremental/tickets.json?start_time={unix_time}'
-    TICKET_FORMAT = '''-------------------------------------
-                       ID: {id}
-                       CREATED AT: {created_at}
-                       SUBJECT: {subject}
-                       DESC: {desc}
-                       -------------------------------------
-                       '''
 
 
     #Parse arguments
